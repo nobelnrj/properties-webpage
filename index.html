@@ -1,345 +1,1056 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/slick.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<title>Rental Page</title>
-</head>
-<body>
-	<section class="hero-image">
-		<div class="container">
-			<header class="py-3 mb-5">
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<a class="navbar-brand" href="#">
-						<img src="img/logo.png" class="logo">
-					</a>
-					<button class="navbar-toggler menu-button" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-						<svg enable-background="new 0 0 24 24" height="20px" id="Layer_1" version="1.1" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#ffffff"><g><path d="M23.244,17.009H0.75c-0.413,0-0.75,0.36-0.75,0.801v3.421C0,21.654,0.337,22,0.75,22h22.494c0.414,0,0.75-0.346,0.75-0.77    V17.81C23.994,17.369,23.658,17.009,23.244,17.009z M23.244,9.009H0.75C0.337,9.009,0,9.369,0,9.81v3.421    c0,0.424,0.337,0.769,0.75,0.769h22.494c0.414,0,0.75-0.345,0.75-0.769V9.81C23.994,9.369,23.658,9.009,23.244,9.009z     M23.244,1.009H0.75C0.337,1.009,0,1.369,0,1.81V5.23c0,0.423,0.337,0.769,0.75,0.769h22.494c0.414,0,0.75-0.346,0.75-0.769V1.81    C23.994,1.369,23.658,1.009,23.244,1.009z"/></g></g></svg>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-					    <ul class="navbar-nav mr-auto mt-2 ml-4 mt-lg-0">
-					    	<li class="nav-item mr-3">
-					       		<a class="nav-link text-white" href="#">Homepage</a>
-					    	</li>
-					    	<li class="nav-item mr-3">
-					        	<a class="nav-link text-white" href="#">About Us</a>
-					    	</li>
-					    	<li class="nav-item mr-3">
-					        	<a class="nav-link text-white" href="#">For Rent</a>
-					    	</li>
-					    	<li class="nav-item mr-3">
-					        	<a class="nav-link text-white" href="#">For Sale</a>
-					    	</li>
-					    	<li class="nav-item mr-3">
-					        	<a class="nav-link text-white" href="#">Our Agents</a>
-					    	</li>
-					    	<li class="nav-item">
-					        	<a class="nav-link text-white" href="#contact">Contact Us</a>
-					    	</li>
-					    </ul>
-					    <ul class="nav navbar-nav">
-							<li class="nav-item mr-3 compare">
-								<a href="#" class="nav-link">
-									<svg height="30" viewBox="0 0 48 48" width="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#ffffff"><defs><path fill="#ffffff" d="M0 0h48v48H0V0z" id="a"/></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"/></clipPath><path clip-path="url(#b)" d="M18.02 28H4v4h14.02v6L26 30l-7.98-8v6zm11.96-2v-6H44v-4H29.98v-6L22 18l7.98 8z"/></g></svg>
-								</a>
-							</li>
-							<li class="nav-item like">
-								<a href="#" class="nav-link">
-									<svg id="Layer_1" version="1.1" width= "20" height= "20" viewBox="0 0 48 48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#ffffff"><path d="M24,45.3l-0.7-0.7c0,0-17.7-17.7-17.9-17.9C0.7,21.2,1,13,6,8c2.6-2.6,6-4,9.7-4c3,0,5.9,1,8.3,2.8C29.4,2.7,37,3.1,42,8   l0,0c2.6,2.6,4,6,4,9.6c0,3.4-1.2,6.5-3.3,9l0,0C42.3,27,40,29.3,24.7,44.6L24,45.3z M15.7,6c-3.2,0-6.1,1.2-8.3,3.4   c-4.3,4.3-4.5,11.3-0.5,15.9C7,25.5,20.7,39.2,24,42.5c6.8-6.8,16.4-16.4,17.1-17.2l0-0.1c1.9-2.1,2.9-4.8,2.9-7.6   c0-3.1-1.2-6-3.4-8.2c-4.4-4.3-11.3-4.6-15.9-0.6L24,9.4l-0.7-0.6C21.2,7,18.5,6,15.7,6z"/></g></svg>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</header>
-			<div class="hero-section">
-				<h1 class="text-white text-capitalize mb-3">let us guide you home</h1>
-				<p class="text-white mb-5">Find the house of your dreams</p>
-				<form class="hero-form row">
-					<div class="dropdown drop-down">
-						<div class="btn" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Rent <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path fill="#454545" fill-rule="nonzero" d="M5 4.19L8.78.22a.69.69 0 0 1 1.01 0 .777.777 0 0 1 0 1.06l-4.285 4.5a.69.69 0 0 1-1.01 0L.209 1.28a.777.777 0 0 1 0-1.06.69.69 0 0 1 1.01 0L5 4.19z"/></svg></div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">For Rent</a>
-							<a class="dropdown-item" href="#">For Sale</a>
-							<a class="dropdown-item" href="#">For Lease</a>
-						</div>
-					</div>
-					<div class="input-box">
-						<input class="input-lg" type="text" placeholder="Search for properties or keywords..">
-						<svg class="search-icon" height="25px" version="1.1" viewBox="0 0 32 32" width="25px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><desc></desc><defs></defs><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="#2e46e3" id="icon-111-search"><path d="M19.4271164,21.4271164 C18.0372495,22.4174803 16.3366522,23 14.5,23 C9.80557939,23 6,19.1944206 6,14.5 C6,9.80557939 9.80557939,6 14.5,6 C19.1944206,6 23,9.80557939 23,14.5 C23,16.3366522 22.4174803,18.0372495 21.4271164,19.4271164 L27.0119176,25.0119176 C27.5621186,25.5621186 27.5575313,26.4424687 27.0117185,26.9882815 L26.9882815,27.0117185 C26.4438648,27.5561352 25.5576204,27.5576204 25.0119176,27.0119176 L19.4271164,21.4271164 L19.4271164,21.4271164 Z M14.5,21 C18.0898511,21 21,18.0898511 21,14.5 C21,10.9101489 18.0898511,8 14.5,8 C10.9101489,8 8,10.9101489 8,14.5 C8,18.0898511 10.9101489,21 14.5,21 L14.5,21 Z" id="search"></path></g></g></svg>
-					</div>
-				</form>
-			</div>
-		</div>
-	</section>
-	<section class="py-5 mb-5 properties">
-		<div class="container">
-			<h2 class="text-black mb-4 properties-heading">Featured Properties</h2>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-1.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-2.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-3.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-4.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-5.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<img src="img/property-image-6.png" class="card-img-top">
-						<div class="card-body">
-							<p class="house-name">Villa With Pool For Sale</p>
-							<p class="house-price">$225,000</p>
-							<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-							<div class="house-detials">
-								<div class="bed d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-									<span>4 Beds</span>
-								</div>
-								<div class="bath d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-									<span>2 Baths</span>
-								</div>
-								<div class="area d-inline">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-									<span>980 SqFt</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col text-center">
-				    <a href="javascript:void(0)" class="show-all">All Properties</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="contact mb-5" id="contact">
-		<div class="container">
-			<div class="row ad-block">
-				<div class="col-lg-6">
-					<div class="card card-1">
-						<h2 class="house-name">Aktas Properties Information</h2>
-						<p class="house-address">1234 Hacker St, San Francisco</p>
-						<p class="house-details">(123) 456-7890</p>
-						<p class="house-details">Mon — Sun: 8:00am - 6:00pm</p>
-					</div>
-				</div>	
-				<div class="col-lg-6">
-					<div class="card card-2">
-						<h2 class="ad-heading">Want to Sell Property?</h2>
-						<p class="ad-content">Let us create a tailored strategic marketing plan and keep track of the selling process.</p>
-						<div class="mr-auto">
-							<button class="btn btn-success">Contact Us</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="banner">
-			<div class="card banner-card mb-4">
-				<div class="card-body banner-body">
-					<div class="mr-auto mb-4">
-						<span class="text-white text-uppercase bg-warning rounded p-2">for sale</span>
-					</div>
-					<h3 class="house-name">Villa With Pool For Sale</h3>
-					<p class="house-price">$225,000</p>
-					<p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
-					<div class="house-details">
-						<div class="bed mr-2">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-5 -7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z" mask="url(#b)"/></g></svg>
-							<span class="ml-2">4 Beds</span>
-						</div>
-						<div class="bath mr-2">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z" mask="url(#b)"/></g></svg>
-							<span class="ml-2">2 Baths</span>
-						</div>
-						<div class="area mr-2">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><defs><path id="a" d="M0 0h30v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#7C7C7C" fill-rule="nonzero" d="M9 11h2v10H9z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z" mask="url(#b)"/><path fill="#7C7C7C" fill-rule="nonzero" d="M12.5 8.5l-5 2.5V6z" mask="url(#b)" transform="rotate(-90 10 8.5)"/></g></svg>
-							<span class="ml-2">980 SqFt</span>							
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card banner-card">
-				<div class="row m-4">
-					<div class="col-sm-2 dealer-image">
-						<img src="img/person2.png">
-					</div>
-					<div class="col-sm-7 dealer-details">
-						<h6 class="dealer-name">Opi Watihana</h6>
-						<p class="dealer-position">Sales Manager</p>
-					</div>
-					<div class="col-sm-3 contact-button">
-						<button class="btn btn-primary">Contact</button>
-					</div>
-				</div>
-			</div>
-	</section>
-	<section class="testimonial-slider">
-		<h2>What Our Clients Say</h2>
-		<svg class="prev" height="25px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="25px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#004dff"><path d="M28,14H8.8l4.62-4.62C13.814,8.986,14,8.516,14,8c0-0.984-0.813-2-2-2c-0.531,0-0.994,0.193-1.38,0.58l-7.958,7.958  C2.334,14.866,2,15.271,2,16s0.279,1.08,0.646,1.447l7.974,7.973C11.006,25.807,11.469,26,12,26c1.188,0,2-1.016,2-2  c0-0.516-0.186-0.986-0.58-1.38L8.8,18H28c1.104,0,2-0.896,2-2S29.104,14,28,14z"/></g></svg>
-		<div class="container">
-			<div class="slider-container multiple-items">
-				<div class="slider">
-					<img src="img/person1.png" class="person-img">
-					<h3 class="person-name">Jeno</h3>
-					<p class="testimonial-content">The popularity of breakfast foods is a good reason to keep dependable starters, such as eggs, bread and other staples, on hand. But why reserve them only for morning meals? Planning breakfast for dinner is a good way to serve up simple.</p>
-				</div>
-				<div class="slider">
-					<img src="img/person2.png" class="person-img">
-					<h3 class="person-name">Soundarya</h3>
-					<p class="testimonial-content">Have you ever heard the expression, “Do not count your chickens before they hatch?” Maybe an older, wiser individual would tell you this to keep you from getting ahead of yourself. Like buying a new car before you actually got that new job.</p>
-				</div>
-				<div class="slider">
-					<img src="img/person3.png" class="person-img">
-					<h3 class="person-name">Yogesh</h3>
-					<p class="testimonial-content">If there is one thing kids love more than eating pizza, it’s being able to make it themselves using all their favorite toppings. Creating a “make it yourself” pizza party is a great way to customize the meal while involving friends and family in a fun activity.</p>
-				</div>
-				<div class="slider">
-					<img src="img/person1.png" class="person-img">
-					<h3 class="person-name">Sriram</h3>
-					<p class="testimonial-content">The popularity of breakfast foods is a good reason to keep dependable starters, such as eggs, bread and other staples, on hand. But why reserve them only for morning meals? Planning breakfast for dinner is a good way to serve up simple.</p>
-				</div>
-				<div class="slider">
-					<img src="img/person2.png" class="person-img">
-					<h3 class="person-name">Poornima</h3>
-					<p class="testimonial-content">Have you ever heard the expression, “Do not count your chickens before they hatch?” Maybe an older, wiser individual would tell you this to keep you from getting ahead of yourself. Like buying a new car before you actually got that new job.</p>
-				</div>
-				<div class="slider">
-					<img src="img/person3.png" class="person-img ">					
-					<h3 class="person-name">Ragul</h3>
-					<p class="testimonial-content">If there is one thing kids love more than eating pizza, it’s being able to make it themselves using all their favorite toppings. Creating a “make it yourself” pizza party is a great way to customize the meal while involving friends and family in a fun activity.</p>
-				</div>
-			</div>
-		</div>
-		<svg class="next" height="30px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#004dff"><path d="M322.7,128.4L423,233.4c6,5.8,9,13.7,9,22.4c0,8.7-3,16.5-9,22.4L322.7,383.6c-11.9,12.5-31.3,12.5-43.2,0  c-11.9-12.5-11.9-32.7,0-45.2l48.2-50.4h-217C93.7,288,80,273.7,80,256c0-17.7,13.7-32,30.6-32h217l-48.2-50.4  c-11.9-12.5-11.9-32.7,0-45.2C291.4,115.9,310.7,115.9,322.7,128.4z"/></g></svg>
-	</section>
-	<footer>
-		<img src="img/logo-footer.png" class="footer-logo">
-		<p class="footer-content">Have you ever heard the expression, “Do not count your chickens before they hatch?” Maybe an older, wiser individual would tell you this to keep you from getting ahead of yourself.</p>
-	</footer>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Rental Page</title>
+  </head>
+  <body>
+    <section class="hero-image">
+      <div class="container">
+        <header class="py-3 mb-5">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+              <img src="img/logo.png" class="logo" />
+            </a>
+            <button
+              class="navbar-toggler menu-button"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                enable-background="new 0 0 24 24"
+                height="20px"
+                id="Layer_1"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+                xml:space="preserve"
+                xmlns="https://www.w3.org/2000/svg"
+                xmlns:xlink="https://www.w3.org/1999/xlink"
+              >
+                <g fill="#ffffff">
+                  <g>
+                    <path
+                      d="M23.244,17.009H0.75c-0.413,0-0.75,0.36-0.75,0.801v3.421C0,21.654,0.337,22,0.75,22h22.494c0.414,0,0.75-0.346,0.75-0.77    V17.81C23.994,17.369,23.658,17.009,23.244,17.009z M23.244,9.009H0.75C0.337,9.009,0,9.369,0,9.81v3.421    c0,0.424,0.337,0.769,0.75,0.769h22.494c0.414,0,0.75-0.345,0.75-0.769V9.81C23.994,9.369,23.658,9.009,23.244,9.009z     M23.244,1.009H0.75C0.337,1.009,0,1.369,0,1.81V5.23c0,0.423,0.337,0.769,0.75,0.769h22.494c0.414,0,0.75-0.346,0.75-0.769V1.81    C23.994,1.369,23.658,1.009,23.244,1.009z"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 ml-4 mt-lg-0">
+                <li class="nav-item mr-3">
+                  <a class="nav-link text-white" href="#">Homepage</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link text-white" href="#">About Us</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link text-white" href="#">For Rent</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link text-white" href="#">For Sale</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link text-white" href="#">Our Agents</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#contact">Contact Us</a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav">
+                <li class="nav-item mr-3 compare">
+                  <a href="#" class="nav-link">
+                    <svg
+                      height="30"
+                      viewBox="0 0 48 48"
+                      width="30"
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                    >
+                      <g fill="#ffffff">
+                        <defs>
+                          <path fill="#ffffff" d="M0 0h48v48H0V0z" id="a" />
+                        </defs>
+                        <clipPath id="b">
+                          <use overflow="visible" xlink:href="#a" />
+                        </clipPath>
+                        <path
+                          clip-path="url(#b)"
+                          d="M18.02 28H4v4h14.02v6L26 30l-7.98-8v6zm11.96-2v-6H44v-4H29.98v-6L22 18l7.98 8z"
+                        />
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item like">
+                  <a href="#" class="nav-link">
+                    <svg
+                      id="Layer_1"
+                      version="1.1"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                      xml:space="preserve"
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                    >
+                      <g fill="#ffffff">
+                        <path
+                          d="M24,45.3l-0.7-0.7c0,0-17.7-17.7-17.9-17.9C0.7,21.2,1,13,6,8c2.6-2.6,6-4,9.7-4c3,0,5.9,1,8.3,2.8C29.4,2.7,37,3.1,42,8   l0,0c2.6,2.6,4,6,4,9.6c0,3.4-1.2,6.5-3.3,9l0,0C42.3,27,40,29.3,24.7,44.6L24,45.3z M15.7,6c-3.2,0-6.1,1.2-8.3,3.4   c-4.3,4.3-4.5,11.3-0.5,15.9C7,25.5,20.7,39.2,24,42.5c6.8-6.8,16.4-16.4,17.1-17.2l0-0.1c1.9-2.1,2.9-4.8,2.9-7.6   c0-3.1-1.2-6-3.4-8.2c-4.4-4.3-11.3-4.6-15.9-0.6L24,9.4l-0.7-0.6C21.2,7,18.5,6,15.7,6z"
+                        />
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div class="hero-section">
+          <h1 class="text-white text-capitalize mb-3">let us guide you home</h1>
+          <p class="text-white mb-5">Find the house of your dreams</p>
+          <form class="hero-form row">
+            <div class="dropdown drop-down">
+              <div
+                class="btn"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                For Rent
+                <svg
+                  xmlns="https://www.w3.org/2000/svg"
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    fill="#454545"
+                    fill-rule="nonzero"
+                    d="M5 4.19L8.78.22a.69.69 0 0 1 1.01 0 .777.777 0 0 1 0 1.06l-4.285 4.5a.69.69 0 0 1-1.01 0L.209 1.28a.777.777 0 0 1 0-1.06.69.69 0 0 1 1.01 0L5 4.19z"
+                  />
+                </svg>
+              </div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">For Rent</a>
+                <a class="dropdown-item" href="#">For Sale</a>
+                <a class="dropdown-item" href="#">For Lease</a>
+              </div>
+            </div>
+            <div class="input-box">
+              <input
+                class="input-lg"
+                type="text"
+                placeholder="Search for properties or keywords.."
+              />
+              <svg
+                class="search-icon"
+                height="25px"
+                version="1.1"
+                viewBox="0 0 32 32"
+                width="25px"
+                xmlns="https://www.w3.org/2000/svg"
+                xmlns:sketch="https://www.bohemiancoding.com/sketch/ns"
+                xmlns:xlink="https://www.w3.org/1999/xlink"
+              >
+                <title></title>
+                <desc></desc>
+                <defs></defs>
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                >
+                  <g fill="#2e46e3" id="icon-111-search">
+                    <path
+                      d="M19.4271164,21.4271164 C18.0372495,22.4174803 16.3366522,23 14.5,23 C9.80557939,23 6,19.1944206 6,14.5 C6,9.80557939 9.80557939,6 14.5,6 C19.1944206,6 23,9.80557939 23,14.5 C23,16.3366522 22.4174803,18.0372495 21.4271164,19.4271164 L27.0119176,25.0119176 C27.5621186,25.5621186 27.5575313,26.4424687 27.0117185,26.9882815 L26.9882815,27.0117185 C26.4438648,27.5561352 25.5576204,27.5576204 25.0119176,27.0119176 L19.4271164,21.4271164 L19.4271164,21.4271164 Z M14.5,21 C18.0898511,21 21,18.0898511 21,14.5 C21,10.9101489 18.0898511,8 14.5,8 C10.9101489,8 8,10.9101489 8,14.5 C8,18.0898511 10.9101489,21 14.5,21 L14.5,21 Z"
+                      id="search"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 mb-5 properties">
+      <div class="container">
+        <h2 class="text-black mb-4 properties-heading">Featured Properties</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-1.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-2.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-3.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-4.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-5.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <img src="img/property-image-6.png" class="card-img-top" />
+              <div class="card-body">
+                <p class="house-name">Villa With Pool For Sale</p>
+                <p class="house-price">$225,000</p>
+                <p class="house-address">
+                  263 S Rexford Dr, Beverly Hills, CA 90212
+                </p>
+                <div class="house-detials">
+                  <div class="bed d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-5 -7)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>4 Beds</span>
+                  </div>
+                  <div class="bath d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g fill="none" fill-rule="evenodd">
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                          mask="url(#b)"
+                        />
+                      </g>
+                    </svg>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="area d-inline">
+                    <svg
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                    >
+                      <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-7 -6)"
+                      >
+                        <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 11h2v10H9z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                          mask="url(#b)"
+                        />
+                        <path
+                          fill="#7C7C7C"
+                          fill-rule="nonzero"
+                          d="M12.5 8.5l-5 2.5V6z"
+                          mask="url(#b)"
+                          transform="rotate(-90 10 8.5)"
+                        />
+                      </g>
+                    </svg>
+                    <span>980 SqFt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col text-center">
+            <a href="javascript:void(0)" class="show-all">All Properties</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact mb-5" id="contact">
+      <div class="container">
+        <div class="row ad-block">
+          <div class="col-lg-6">
+            <div class="card card-1">
+              <h2 class="house-name">Aktas Properties Information</h2>
+              <p class="house-address">1234 Hacker St, San Francisco</p>
+              <p class="house-details">(123) 456-7890</p>
+              <p class="house-details">Mon — Sun: 8:00am - 6:00pm</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card card-2">
+              <h2 class="ad-heading">Want to Sell Property?</h2>
+              <p class="ad-content">
+                Let us create a tailored strategic marketing plan and keep track
+                of the selling process.
+              </p>
+              <div class="mr-auto">
+                <button class="btn btn-success">Contact Us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="banner">
+      <div class="card banner-card mb-4">
+        <div class="card-body banner-body">
+          <div class="mr-auto mb-4">
+            <span class="text-white text-uppercase bg-warning rounded p-2"
+              >for sale</span
+            >
+          </div>
+          <h3 class="house-name">Villa With Pool For Sale</h3>
+          <p class="house-price">$225,000</p>
+          <p class="house-address">263 S Rexford Dr, Beverly Hills, CA 90212</p>
+          <div class="house-details">
+            <div class="bed mr-2">
+              <svg
+                xmlns="https://www.w3.org/2000/svg"
+                xmlns:xlink="https://www.w3.org/1999/xlink"
+                width="20"
+                height="16"
+                viewBox="0 0 20 16"
+              >
+                <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                <g fill="none" fill-rule="evenodd" transform="translate(-5 -7)">
+                  <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                  <path
+                    fill="#7C7C7C"
+                    fill-rule="nonzero"
+                    d="M23 15h2v8h-2v-1.003H7V23H5V7h2v4.587l4.416 4.416H23V15zm-16-.587v1.584h1.584L7 14.413zm0 5.59h16v-2H7v2zM12.003 13h10v2h-10v-2z"
+                    mask="url(#b)"
+                  />
+                </g>
+              </svg>
+              <span class="ml-2">4 Beds</span>
+            </div>
+            <div class="bath mr-2">
+              <svg
+                xmlns="https://www.w3.org/2000/svg"
+                xmlns:xlink="https://www.w3.org/1999/xlink"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+              >
+                <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                <g fill="none" fill-rule="evenodd">
+                  <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                  <use fill="#FFF" fill-rule="nonzero" xlink:href="#a" />
+                  <path
+                    fill="#7C7C7C"
+                    fill-rule="nonzero"
+                    d="M9.401 15.002v-4.799a1.6 1.6 0 0 1 1.6-1.6c.316 0 .606.095.853.253-.179.34-.286.716-.286 1.113 0 .64.252 1.245.704 1.697l.568.564 3.39-3.392-.567-.567c-.682-.682-1.744-.849-2.614-.507A3.165 3.165 0 0 0 11 7a3.2 3.2 0 0 0-3.2 3.2v4.802H7v3.2a4.011 4.011 0 0 0 3.2 3.92V23h1.599v-.802h6.398V23h1.6v-.879a4.008 4.008 0 0 0 3.199-3.92v-3.199H9.4zm11.995 3.2a2.404 2.404 0 0 1-2.401 2.4H11a2.404 2.404 0 0 1-2.401-2.4v-1.6h12.796v1.6z"
+                    mask="url(#b)"
+                  />
+                </g>
+              </svg>
+              <span class="ml-2">2 Baths</span>
+            </div>
+            <div class="area mr-2">
+              <svg
+                xmlns="https://www.w3.org/2000/svg"
+                xmlns:xlink="https://www.w3.org/1999/xlink"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+              >
+                <defs><path id="a" d="M0 0h30v30H0z" /></defs>
+                <g fill="none" fill-rule="evenodd" transform="translate(-7 -6)">
+                  <mask id="b" fill="#fff"><use xlink:href="#a" /></mask>
+                  <path
+                    fill="#7C7C7C"
+                    fill-rule="nonzero"
+                    d="M9 11h2v10H9z"
+                    mask="url(#b)"
+                  />
+                  <path
+                    fill="#7C7C7C"
+                    fill-rule="nonzero"
+                    d="M9 19h10v2H9zM24.002 20l-5 2.5v-5z"
+                    mask="url(#b)"
+                  />
+                  <path
+                    fill="#7C7C7C"
+                    fill-rule="nonzero"
+                    d="M12.5 8.5l-5 2.5V6z"
+                    mask="url(#b)"
+                    transform="rotate(-90 10 8.5)"
+                  />
+                </g>
+              </svg>
+              <span class="ml-2">980 SqFt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card banner-card">
+        <div class="row m-4">
+          <div class="col-sm-2 dealer-image">
+            <img src="img/person2.png" />
+          </div>
+          <div class="col-sm-7 dealer-details">
+            <h6 class="dealer-name">Opi Watihana</h6>
+            <p class="dealer-position">Sales Manager</p>
+          </div>
+          <div class="col-sm-3 contact-button">
+            <button class="btn btn-primary">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonial-slider">
+      <h2>What Our Clients Say</h2>
+      <svg
+        class="prev"
+        height="25px"
+        id="Layer_1"
+        style="enable-background:new 0 0 32 32;"
+        version="1.1"
+        viewBox="0 0 32 32"
+        width="25px"
+        xml:space="preserve"
+        xmlns="https://www.w3.org/2000/svg"
+        xmlns:xlink="https://www.w3.org/1999/xlink"
+      >
+        <g fill="#004dff">
+          <path
+            d="M28,14H8.8l4.62-4.62C13.814,8.986,14,8.516,14,8c0-0.984-0.813-2-2-2c-0.531,0-0.994,0.193-1.38,0.58l-7.958,7.958  C2.334,14.866,2,15.271,2,16s0.279,1.08,0.646,1.447l7.974,7.973C11.006,25.807,11.469,26,12,26c1.188,0,2-1.016,2-2  c0-0.516-0.186-0.986-0.58-1.38L8.8,18H28c1.104,0,2-0.896,2-2S29.104,14,28,14z"
+          />
+        </g>
+      </svg>
+      <div class="container">
+        <div class="slider-container multiple-items">
+          <div class="slider">
+            <img src="img/person1.png" class="person-img" />
+            <h3 class="person-name">Jeno</h3>
+            <p class="testimonial-content">
+              The popularity of breakfast foods is a good reason to keep
+              dependable starters, such as eggs, bread and other staples, on
+              hand. But why reserve them only for morning meals? Planning
+              breakfast for dinner is a good way to serve up simple.
+            </p>
+          </div>
+          <div class="slider">
+            <img src="img/person2.png" class="person-img" />
+            <h3 class="person-name">Soundarya</h3>
+            <p class="testimonial-content">
+              Have you ever heard the expression, “Do not count your chickens
+              before they hatch?” Maybe an older, wiser individual would tell
+              you this to keep you from getting ahead of yourself. Like buying a
+              new car before you actually got that new job.
+            </p>
+          </div>
+          <div class="slider">
+            <img src="img/person3.png" class="person-img" />
+            <h3 class="person-name">Yogesh</h3>
+            <p class="testimonial-content">
+              If there is one thing kids love more than eating pizza, it’s being
+              able to make it themselves using all their favorite toppings.
+              Creating a “make it yourself” pizza party is a great way to
+              customize the meal while involving friends and family in a fun
+              activity.
+            </p>
+          </div>
+          <div class="slider">
+            <img src="img/person1.png" class="person-img" />
+            <h3 class="person-name">Sriram</h3>
+            <p class="testimonial-content">
+              The popularity of breakfast foods is a good reason to keep
+              dependable starters, such as eggs, bread and other staples, on
+              hand. But why reserve them only for morning meals? Planning
+              breakfast for dinner is a good way to serve up simple.
+            </p>
+          </div>
+          <div class="slider">
+            <img src="img/person2.png" class="person-img" />
+            <h3 class="person-name">Poornima</h3>
+            <p class="testimonial-content">
+              Have you ever heard the expression, “Do not count your chickens
+              before they hatch?” Maybe an older, wiser individual would tell
+              you this to keep you from getting ahead of yourself. Like buying a
+              new car before you actually got that new job.
+            </p>
+          </div>
+          <div class="slider">
+            <img src="img/person3.png" class="person-img " />
+            <h3 class="person-name">Ragul</h3>
+            <p class="testimonial-content">
+              If there is one thing kids love more than eating pizza, it’s being
+              able to make it themselves using all their favorite toppings.
+              Creating a “make it yourself” pizza party is a great way to
+              customize the meal while involving friends and family in a fun
+              activity.
+            </p>
+          </div>
+        </div>
+      </div>
+      <svg
+        class="next"
+        height="30px"
+        id="Layer_1"
+        style="enable-background:new 0 0 512 512;"
+        version="1.1"
+        viewBox="0 0 512 512"
+        width="30px"
+        xml:space="preserve"
+        xmlns="https://www.w3.org/2000/svg"
+        xmlns:xlink="https://www.w3.org/1999/xlink"
+      >
+        <g fill="#004dff">
+          <path
+            d="M322.7,128.4L423,233.4c6,5.8,9,13.7,9,22.4c0,8.7-3,16.5-9,22.4L322.7,383.6c-11.9,12.5-31.3,12.5-43.2,0  c-11.9-12.5-11.9-32.7,0-45.2l48.2-50.4h-217C93.7,288,80,273.7,80,256c0-17.7,13.7-32,30.6-32h217l-48.2-50.4  c-11.9-12.5-11.9-32.7,0-45.2C291.4,115.9,310.7,115.9,322.7,128.4z"
+          />
+        </g>
+      </svg>
+    </section>
+    <footer>
+      <img src="img/logo-footer.png" class="footer-logo" />
+      <p class="footer-content">
+        Have you ever heard the expression, “Do not count your chickens before
+        they hatch?” Maybe an older, wiser individual would tell you this to
+        keep you from getting ahead of yourself.
+      </p>
+    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+  </body>
 </html>
